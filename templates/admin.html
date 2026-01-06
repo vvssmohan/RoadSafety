@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - View Reports</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    
+    <nav class="navbar">
+        <h2> Road Safety Platform</h2>
+        <div>
+            <a href="{{ url_for('dashboard') }}" class="nav-link">Dashboard</a>
+            <a href="{{ url_for('logout') }}" class="nav-link">Logout</a>
+        </div>
+    </nav>
+
+    
+    <div class="container">
+        <h1>👨‍💼 Admin Panel - View Reports</h1>
+        <p class="subtitle">All reported road safety issues</p>
+
+        {% if issues %}
+            <!-- Reports Table -->
+            <div class="card">
+                <h2>Total Reports: {{ issues|length }}</h2>
+                
+                <table class="reports-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Issue Type</th>
+                            <th>Location</th>
+                            <th>Description</th>
+                            <th>Reported By</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for issue in issues %}
+                        <tr>
+                            <td>{{ loop.index }}</td>
+                            <td><span class="badge">{{ issue.type }}</span></td>
+                            <td>{{ issue.location }}</td>
+                            <td>{{ issue.description }}</td>
+                            <td>{{ issue.reported_by }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+            <!-- No Reports Message -->
+            <div class="empty-state">
+                <h2>📭 No Reports Yet</h2>
+                <p>No road safety issues have been reported yet.</p>
+                <a href="{{ url_for('report') }}" class="btn btn-primary">Report First Issue</a>
+            </div>
+        {% endif %}
+
+        
+        <div class="action-buttons">
+            <a href="{{ url_for('dashboard') }}" class="btn btn-secondary">Back to Dashboard</a>
+        </div>
+    </div>
+
+    
+    <footer>
+        <p>Road Safety Awareness Platform © 2026</p>
+    </footer>
+</body>
+</html>

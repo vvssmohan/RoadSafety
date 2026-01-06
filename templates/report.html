@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Issue - Road Safety Platform</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+   
+    <nav class="navbar">
+        <h2>🚦 Road Safety Platform</h2>
+        <div>
+            <a href="{{ url_for('dashboard') }}" class="nav-link">Dashboard</a>
+            <a href="{{ url_for('logout') }}" class="nav-link">Logout</a>
+        </div>
+    </nav>
+
+    <!-- Report Form -->
+    <div class="container">
+        <h1>⚠️ Report Road Safety Issue</h1>
+        <p class="subtitle">Help us identify and fix unsafe road conditions</p>
+
+        {% if success %}
+            <!-- Success Message -->
+            <div class="success-message">
+                <h2>✅ Report Submitted Successfully!</h2>
+                <p>Thank you for reporting this issue. We will review it soon.</p>
+                <div class="action-buttons">
+                    <a href="{{ url_for('report') }}" class="btn btn-primary">Report Another Issue</a>
+                    <a href="{{ url_for('dashboard') }}" class="btn btn-secondary">Back to Dashboard</a>
+                    <a href="{{ url_for('admin') }}" class="btn btn-secondary">View All Reports</a>
+                </div>
+            </div>
+        {% else %}
+            <!-- Report Form -->
+            <div class="card report-card">
+                <form method="POST" action="{{ url_for('report') }}">
+                    <!-- Issue Type -->
+                    <div class="form-group">
+                        <label for="issue_type">Issue Type:</label>
+                        <select id="issue_type" name="issue_type" required>
+                            <option value="">-- Select Issue Type --</option>
+                            <option value="Pothole">Pothole</option>
+                            <option value="Broken Traffic Light">Broken Traffic Light</option>
+                            <option value="Missing Road Sign">Missing Road Sign</option>
+                            <option value="Poor Lighting">Poor Lighting</option>
+                            <option value="Damaged Guardrail">Damaged Guardrail</option>
+                            <option value="Unmarked Speed Breaker">Unmarked Speed Breaker</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <!-- Location -->
+                    <div class="form-group">
+                        <label for="location">Location:</label>
+                        <input type="text" 
+                               id="location" 
+                               name="location" 
+                               placeholder="Enter the location (e.g., Main Street, near City Mall)"
+                               required>
+                    </div>
+
+                   
+                    <div class="form-group">
+                        <label for="description">Description:</label>
+                        <textarea id="description" 
+                                  name="description" 
+                                  rows="5" 
+                                  placeholder="Provide details about the issue..."
+                                  required></textarea>
+                    </div>
+
+                    
+                    <button type="submit" class="btn btn-primary">Submit Report</button>
+                </form>
+            </div>
+
+            
+            <div class="info-box">
+                <h3>💡 Tips for Reporting:</h3>
+                <ul>
+                    <li>Be specific about the location</li>
+                    <li>Describe the issue clearly</li>
+                    <li>Mention any immediate dangers</li>
+                    <li>Include nearby landmarks if possible</li>
+                </ul>
+            </div>
+        {% endif %}
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Road Safety Awareness Platform © 2026</p>
+    </footer>
+</body>
+</html>

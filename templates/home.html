@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Road Safety Awareness Platform</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <nav class="navbar">
+        <h2> Road Safety Platform</h2>
+        <div>
+            <a href="{{ url_for('home') }}" class="nav-link">Home</a>
+            <a href="{{ url_for('login') }}" class="nav-link">Login</a>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <h1>Welcome to Road Safety Awareness Platform</h1>
+        <p class="subtitle">Learn road safety rules, take quizzes, and report unsafe conditions</p>
+
+        
+        <div class="card">
+            <h2>Basic Road Safety Rules</h2>
+            <div class="rules-list">
+                <div class="rule-item">
+                    <h3>1. Follow Traffic Signals</h3>
+                    <p>Always obey traffic lights. Red means stop, yellow means prepare to stop, and green means go.</p>
+                </div>
+
+                <div class="rule-item">
+                    <h3>2. Wear Seatbelts</h3>
+                    <p>Always wear your seatbelt while driving or riding in a vehicle. It can save your life.</p>
+                </div>
+
+                <div class="rule-item">
+                    <h3>3. Follow Speed Limits</h3>
+                    <p>Drive within the speed limit. Speed limits are set for your safety and others.</p>
+                </div>
+
+                <div class="rule-item">
+                    <h3>4. Don't Use Mobile Phones</h3>
+                    <p>Never use your mobile phone while driving. It can cause serious accidents.</p>
+                </div>
+
+                <div class="rule-item">
+                    <h3>5. Give Way to Pedestrians</h3>
+                    <p>Always stop at zebra crossings and let pedestrians cross safely.</p>
+                </div>
+
+                <div class="rule-item">
+                    <h3>6. Wear Helmets</h3>
+                    <p>If you ride a bike or motorcycle, always wear a helmet for protection.</p>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="cta-section">
+            <h2>Ready to Learn More?</h2>
+            <p>Login to access interactive quizzes and report unsafe road conditions</p>
+            <a href="{{ url_for('login') }}" class="btn btn-primary">Get Started</a>
+        </div>
+    </div>
+
+    
+    <footer>
+        <p>Road Safety Awareness Platform © 2026 | Stay Safe, Drive Safe</p>
+    </footer>
+</body>
+</html>
