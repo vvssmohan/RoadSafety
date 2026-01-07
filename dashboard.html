@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - Road Safety Awareness Platform</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-auth="true">
+  <header>
+    <h1>🚦 Road Safety Awareness Platform</h1>
+    <div class="nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="learn.html">Learn</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="report.html">Report</a>
+      <button data-logout>Logout</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <h2>Welcome, <span id="welcome-user">Guest</span></h2>
+      <p>Choose an action below to continue.</p>
+      <div class="grid" style="margin-top:12px;">
+        <div class="card">
+          <h3>Learn Road Safety</h3>
+          <p>Read essential rules and tips.</p>
+          <a class="btn" href="learn.html">Go to Learn</a>
+        </div>
+        <div class="card">
+          <h3>Take Quiz</h3>
+          <p>Answer 5 quick questions.</p>
+          <a class="btn" href="quiz.html">Start Quiz</a>
+        </div>
+        <div class="card">
+          <h3>Report Issue</h3>
+          <p>Submit unsafe road conditions.</p>
+          <a class="btn" href="report.html">Report Now</a>
+        </div>
+        <div class="card">
+          <h3>View Reports</h3>
+          <p>See submitted issues (optional admin).</p>
+          <a class="btn" href="admin.html">Open Admin</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Road Safety Awareness Platform © 2026</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

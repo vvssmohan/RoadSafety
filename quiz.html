@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz - Road Safety Awareness Platform</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-auth="true">
+  <header>
+    <h1>🚦 Road Safety Awareness Platform</h1>
+    <div class="nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="learn.html">Learn</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="report.html">Report</a>
+      <button data-logout>Logout</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <h2>Road Safety Quiz</h2>
+      <p>Answer 5 quick questions. All data stays in your browser.</p>
+      <form id="quiz-form">
+        <div id="quiz-container"></div>
+        <button type="submit" class="btn" style="margin-top:10px;">Submit Quiz</button>
+      </form>
+      <div id="quiz-result" style="margin-top:12px;"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Road Safety Awareness Platform © 2026</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

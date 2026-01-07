@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin - Road Safety Awareness Platform</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-auth="true">
+  <header>
+    <h1>🚦 Road Safety Awareness Platform</h1>
+    <div class="nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="learn.html">Learn</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="report.html">Report</a>
+      <button data-logout>Logout</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <h2>Reported Issues (Local Storage)</h2>
+      <p>This page reads reports stored in your browser. Clear browser data to reset.</p>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Issue Type</th>
+            <th>Location</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody id="reports-table-body"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p>Road Safety Awareness Platform © 2026</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
