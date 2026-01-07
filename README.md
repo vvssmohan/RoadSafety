@@ -1,4 +1,5 @@
-# 🚦 Road Safety Awareness Platform (Static)
+# 🚦 Road Safety Awareness Platform 
+
 
 Simple, beginner-friendly **HTML/CSS/JavaScript** website—no backend or frameworks. All data stays in your browser via `localStorage`.
 
